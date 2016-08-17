@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="src:hibernate.cfg.xml/Hibernate" uuid="bd6ea40e-0af1-49d8-a04b-1675d0949672">
+    <database-info product="MySQL" version="5.5.23" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="test">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <table id="5" parent="1" name="user"/>
+      <table id="6" parent="1" name="job"/>
+      <column id="7" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(8)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="8" parent="5" name="name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="9" parent="5" name="age">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="10" parent="5" name="isAdmin">
+        <data-type>bit(1)|0</data-type>
+      </column>
+      <column id="11" parent="5" name="createdDate">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="12" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="13" parent="6" name="id">
+        <comment>список дел</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="6" name="name">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="15" parent="6" name="made">
+        <data-type>bit(1)|0</data-type>
+      </column>
+      <column id="16" parent="6" name="time">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="17" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

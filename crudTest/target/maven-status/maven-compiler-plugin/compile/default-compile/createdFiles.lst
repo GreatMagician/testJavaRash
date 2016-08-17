@@ -1,0 +1,6 @@
+bd\hibernate\HibernateUtil.class
+bd\dao\UserDaoImpl.class
+servlets\StartServlet.class
+bd\dao\UserDao.class
+servlets\DispetcherServlet.class
+bd\table\User.class

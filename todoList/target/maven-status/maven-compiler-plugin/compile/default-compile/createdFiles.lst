@@ -1,0 +1,6 @@
+bd\hibernate\HibernateUtil.class
+bd\table\Job.class
+servlets\StartServlet.class
+bd\dao\CaseDao.class
+servlets\DispetcherServlet.class
+bd\dao\CaseDaoImpl.class
