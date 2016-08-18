@@ -43,6 +43,12 @@
           <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache:2.10.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
           <element id="library" level="project" name="Maven: javaee:javaee-api:5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.0.BUILD-SNAPSHOT" />
         </element>
       </element>
       <element id="directory" name="META-INF">

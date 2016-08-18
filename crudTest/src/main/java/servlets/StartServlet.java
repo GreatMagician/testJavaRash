@@ -2,6 +2,8 @@ package servlets;
 import bd.dao.UserDao;
 import bd.dao.UserDaoImpl;
 import bd.table.User;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,12 +20,12 @@ import java.util.*;
 public class StartServlet extends DispetcherServlet {
 
     List<User> users = null; // список дел
+    ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // установить кодировку
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        // если нажата кнопка
         String name; // имя кнопки
 
            if(request.getParameter("search") != null){ // поиск по имени
@@ -53,7 +55,7 @@ public class StartServlet extends DispetcherServlet {
                     int id = Integer.parseInt(name.substring(6));
                     for (User user: users){
                         if (user.getId() == id){
-                            UserDao caseDao = new UserDaoImpl();
+                            UserDao caseDao = (UserDao) context.getBean("userDao");
                             try {
                                 caseDao.deleteUser(user);
                                 showAllUsers(request);
@@ -72,7 +74,7 @@ public class StartServlet extends DispetcherServlet {
      * @param request запрос
      */
      private void showAllUsers(HttpServletRequest request){
-         UserDao userDao = new UserDaoImpl();
+         UserDao userDao = (UserDao) context.getBean("userDao");
          try {
              users = userDao.query("FROM User");
              request.setAttribute("users", users);
@@ -196,7 +198,7 @@ public class StartServlet extends DispetcherServlet {
         }
 
         // save
-        UserDao userDao = new UserDaoImpl();
+        UserDao userDao = (UserDao) context.getBean("userDao");
         for (Map.Entry<Integer, User> pair: saveUserMap.entrySet() ){
             try {
                 userDao.updateUser(pair.getValue());
@@ -246,7 +248,7 @@ public class StartServlet extends DispetcherServlet {
         user.setAge(age);
         user.setAdmin(isAdmin);
         user.setDate(new Date());
-        UserDao caseDao = new UserDaoImpl();
+        UserDao caseDao = (UserDao) context.getBean("userDao");
         try {
             caseDao.addUser(user);
         } catch (SQLException e) {
